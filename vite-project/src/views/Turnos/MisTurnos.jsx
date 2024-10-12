@@ -26,8 +26,9 @@ const MisTurnos = () => {
   const cancelarTurno = async (id) => {
     try {
       await axios.put(
-        `${import.meta.env.VITE_BACKEND_URL}/appointments?userId=${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/appointments/cancel/${id}`,
       );
+
       // await axios.put(`http://localhost:3000/appointments/cancel/${id}`);
       const nuevosTurnos = userAppointments.map((turno) =>
         turno.id === id ? { ...turno, status: 'Cancelado' } : turno,
@@ -42,7 +43,7 @@ const MisTurnos = () => {
     const turno = userAppointments.find((t) => t.id === id);
     console.log(`Estado del turno antes de eliminar: ${turno.status}`);
 
-    if (turno.status.toLowerCase() === 'activo') {
+    if (turno.status?.toLowerCase() === 'activo') {
       console.error('No se puede eliminar un turno activo');
       Swal.fire({
         title: 'No se puede eliminar el turno',
