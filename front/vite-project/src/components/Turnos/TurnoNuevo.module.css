@@ -1,0 +1,47 @@
+/* TurnoNuevo.module.css */
+.form {
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.inputBlock {
+  margin-bottom: 20px;
+  /* otros estilos */
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  /* otros estilos */
+}
+
+.input,
+.select {
+  border-radius: 9px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  /* otros estilos */
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  /* otros estilos */
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

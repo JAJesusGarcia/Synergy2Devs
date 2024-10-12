@@ -1,0 +1,110 @@
+.tecnologiasContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.tecnologiasTitle {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.tecnologiasList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  perspective: 1000px;
+}
+
+.tecnologiaCard {
+  width: 100%;
+  height: 250px;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateZ(30px) rotateX(15deg) rotateY(15deg);
+}
+
+.tecnologiaImageLink {
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+.tecnologiaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.652);
+  border-radius: 15%;
+}
+
+.card:hover .tecnologiaImage {
+  transform: translateZ(30px) scale(1.2);
+}
+
+.cardTitle {
+  color: #40c9ff;
+  font: 700 1.2rem sans-serif;
+  text-align: center;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.card:hover .cardTitle {
+  transform: translateZ(50px);
+}
+
+@media (max-width: 1200px) {
+  .tecnologiasList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .tecnologiasList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tecnologiasList {
+    grid-template-columns: 1fr;
+  }
+
+  .tecnologiaCard {
+    height: 200px;
+  }
+
+  .tecnologiaImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+}

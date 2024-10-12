@@ -1,0 +1,121 @@
+.register-container {
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left {
+  width: 50%;
+  padding: 20px;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputBlock {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: -20px;
+  font-size: 12px;
+  color: #333;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.forgot {
+  font-size: 14px;
+}
+
+.a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rocketWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rocketLaunch 2s ease-in forwards;
+}
+
+@keyframes rocketLaunch {
+  0% {
+    transform: translateY(100%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-50%);
+  }
+}

@@ -1,0 +1,14 @@
+.no-turnos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 60vh;
+  width: 100vw;
+}
+
+.no-turnos-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #40c9ff;
+}

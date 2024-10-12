@@ -1,0 +1,82 @@
+.turno {
+  background-color: #6c788ea0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 8px auto;
+  border: 1px solid #005cc54a;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.info p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.botones {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.status {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.active {
+  color: rgb(0, 255, 0);
+}
+
+.cancelled {
+  color: rgb(255, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .botones {
+    justify-content: center;
+  }
+
+  .status {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .turno {
+    width: 95%;
+    padding: 8px;
+  }
+
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .info p {
+    font-size: 0.85em;
+  }
+
+  .botones {
+    grid-column: 1 / -1;
+  }
+
+  .status {
+    grid-column: 1 / -1;
+  }
+}

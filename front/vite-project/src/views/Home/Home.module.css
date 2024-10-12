@@ -1,0 +1,63 @@
+.home-container {
+  padding: 2rem; /* Ajusta el padding según sea necesario */
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: #934893;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+.botones-navbar {
+  display: flex;
+  gap: 15px;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.boton {
+  padding: 8px 15px;
+  background: black;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  color: #e6c8b1;
+}
+
+.boton:hover {
+  color: #020e1eaa;
+}
+
+.boton:after {
+  content: '';
+  background: #c4b8ae;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.boton:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}

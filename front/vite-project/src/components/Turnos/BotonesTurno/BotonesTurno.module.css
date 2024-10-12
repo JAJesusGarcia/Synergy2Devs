@@ -1,0 +1,70 @@
+.botones-turno {
+  display: flex;
+  gap: 10px;
+  margin-top: 3px;
+}
+
+.boton {
+  padding: 8px 15px;
+  margin: 0.5em;
+  background: black;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: backgraund-color 0.3s ease;
+}
+
+.boton:hover {
+  color: #020e1eaa;
+}
+
+.boton:after {
+  content: '';
+  background: #c4b8ae;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.boton:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.boton-cancelar {
+  /* background-color: #f0ac4ea4; */
+  background-color: #020e1eaa;
+  color: #e6c8b1;
+}
+
+.boton-cancelar:hover:not(:disabled) {
+  background-color: #fc9300;
+  color: #020e1eaa;
+}
+
+.boton-eliminar {
+  /* background-color: #d9544fa7; */
+  background-color: #020e1eaa;
+  color: #e6c8b1;
+}
+
+.boton-eliminar:hover {
+  background-color: #e2635f;
+  color: #020e1eaa;
+}

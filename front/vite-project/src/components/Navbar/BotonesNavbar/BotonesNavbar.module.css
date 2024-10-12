@@ -1,0 +1,61 @@
+.botones-navbar {
+  display: flex;
+  gap: 15px;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.boton {
+  padding: 8px 15px;
+  /* margin: 0.5em; */
+  background: black;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  color: #e6c8b1;
+}
+
+.boton:hover {
+  color: #020e1eaa;
+}
+
+.boton:after {
+  content: '';
+  background: #c4b8ae;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.boton:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.boton-login {
+  background-color: #020e1eaa;
+}
+
+.boton-login:hover {
+  background-color: #3f00fc;
+}
+
+.boton-register {
+  background-color: #020e1eaa;
+}
+
+.boton-register:hover {
+  background-color: #3f00fc;
+}
