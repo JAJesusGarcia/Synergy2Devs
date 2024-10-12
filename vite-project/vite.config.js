@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://back-production-dd6b.up.railway.app', // Cambia esto por la URL de tu backend
+        target: 'https://back-production-dd6b.up.railway.app',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
