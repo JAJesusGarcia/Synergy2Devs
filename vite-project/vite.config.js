@@ -10,4 +10,13 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://back-production-dd6b.up.railway.app', // Cambia esto por la URL de tu backend
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });
