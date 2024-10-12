@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/emails/send';
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/emails/send`;
+// const API_URL = 'http://localhost:3000/emails/send';
 
 export const sendEmail = async (to, subject, text) => {
   try {

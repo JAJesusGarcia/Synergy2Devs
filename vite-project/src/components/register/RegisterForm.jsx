@@ -63,7 +63,7 @@ const RegisterForm = () => {
       try {
         console.log('Sending data:', userData);
         const response = await axios.post(
-          'http://localhost:3000/users/register',
+          `${import.meta.env.VITE_BACKEND_URL}/users/register`,
           {
             ...userData,
             username: userData.credentialsId.username,

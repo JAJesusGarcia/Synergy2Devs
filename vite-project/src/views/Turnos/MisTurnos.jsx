@@ -13,7 +13,9 @@ const MisTurnos = () => {
   useEffect(() => {
     if (user) {
       axios
-        .get(`http://localhost:3000/appointments?userId=${user.id}`)
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/appointments?userId=${user.id}`,
+        )
         .then((res) => {
           dispatch(setUserAppointments(res.data));
         })
@@ -23,7 +25,10 @@ const MisTurnos = () => {
 
   const cancelarTurno = async (id) => {
     try {
-      await axios.put(`http://localhost:3000/appointments/cancel/${id}`);
+      await axios.put(
+        `${import.meta.env.VITE_BACKEND_URL}/appointments?userId=${id}`,
+      );
+      // await axios.put(`http://localhost:3000/appointments/cancel/${id}`);
       const nuevosTurnos = userAppointments.map((turno) =>
         turno.id === id ? { ...turno, status: 'Cancelado' } : turno,
       );
@@ -49,7 +54,11 @@ const MisTurnos = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:3000/appointments/${id}`);
+      // await axios.delete(`http://localhost:3000/appointments/${id}`);
+      await axios.delete(
+        `${import.meta.env.VITE_BACKEND_URL}/appointments/${id}`,
+      );
+
       const nuevosTurnos = userAppointments.filter((turno) => turno.id !== id);
       dispatch(setUserAppointments(nuevosTurnos));
       console.log(`Turno ${id} eliminado con éxito`);

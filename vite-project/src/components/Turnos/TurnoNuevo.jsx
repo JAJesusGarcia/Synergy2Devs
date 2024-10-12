@@ -117,7 +117,7 @@ const TurnoNuevo = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/appointments',
+        `${import.meta.env.VITE_BACKEND_URL}/appointments`,
         appointmentData,
       );
       dispatch(addUserAppointment(response.data));

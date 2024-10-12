@@ -68,7 +68,7 @@ const LoginForm = () => {
       try {
         console.log('Datos enviados:', loginData.credentialsId); // Verifica los datos enviados
         const response = await axios.post(
-          'http://localhost:3000/users/login',
+          `${import.meta.env.VITE_BACKEND_URL}/users/login`,
           loginData.credentialsId,
         );
         console.log('Respuesta del servidor:', response.data);
