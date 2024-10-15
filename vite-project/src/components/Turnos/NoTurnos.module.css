@@ -4,7 +4,9 @@
   align-items: center;
   height: auto;
   min-height: 60vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 1000px;
+  margin: 8px auto;
 }
 
 .no-turnos-title {

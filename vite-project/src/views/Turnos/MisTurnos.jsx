@@ -4,6 +4,7 @@ import TurnoItem from '../../components/Turnos/TurnoItem';
 import NoTurnos from '../../components/Turnos/NoTurnos';
 import axios from 'axios';
 import { setUserAppointments } from '../../store/userSlice';
+import styles from './Turnos.module.css';
 
 const MisTurnos = () => {
   const dispatch = useDispatch();
