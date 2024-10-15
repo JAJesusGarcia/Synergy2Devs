@@ -9,7 +9,7 @@
   bottom: 0; /* Lo posiciona en la parte inferior */
   left: 0; /* Lo alinea a la izquierda */
   padding: 0.625rem;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   z-index: 100; /* Asegura que el footer esté encima de otros elementos si es necesario */
 }
@@ -17,4 +17,24 @@
 .copyright {
   font-size: 14px;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 768px) {
+  .copyright {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 0.5rem;
+  }
+
+  .copyright {
+    white-space: normal;
+    text-align: center;
+  }
 }
