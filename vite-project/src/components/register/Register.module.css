@@ -12,6 +12,7 @@
   border-radius: 15px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
   border: 0.1px solid rgba(128, 128, 128, 0.178);
+  margin-bottom: 5rem;
 }
 
 .options-container {
@@ -153,6 +154,7 @@
   .container {
     flex-direction: column;
     height: auto;
+    width: 90%;
   }
 
   .left,

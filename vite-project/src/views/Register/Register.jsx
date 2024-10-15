@@ -3,11 +3,11 @@ import RegisterForm from '../../components/register/RegisterForm';
 
 const Register = () => {
   return (
-    <div>
+    <div className={styles['register-container']}>
       <h1>
         <strong>Synergy2Devs 🚀</strong>
       </h1>
-      <div className={styles['register-container']}>
+      <div>
         <p>
           <strong>Por favor, completa este Formulario para registrarte</strong>
         </p>
