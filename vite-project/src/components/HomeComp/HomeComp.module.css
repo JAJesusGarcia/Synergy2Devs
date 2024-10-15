@@ -22,6 +22,7 @@
   max-width: 600px;
   height: 200px;
   perspective: 1000px;
+  margin: 0 auto;
 }
 
 .card-inner {
@@ -36,28 +37,7 @@
   transform: rotateY(180deg);
 }
 
-.card-front {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 18px;
-  font-family: inherit;
-  color: white;
-  box-sizing: border-box;
-  border-radius: 16px;
-  background-size: 200% 100%;
-  animation: gradient 5s ease infinite;
-  cursor: pointer;
-}
+.card-front,
 .card-back {
   width: 100%;
   height: 100%;
@@ -71,19 +51,26 @@
     linear-gradient(#212121, #212121) padding-box,
     linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
+  padding: 16px;
   font-family: inherit;
-  color: #e81cff;
+  color: white;
   box-sizing: border-box;
   border-radius: 16px;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
   cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-front {
+  font-size: 18px;
 }
 
 .card-back {
   transform: rotateY(180deg);
+  font-size: 14px;
+  color: #e81cff;
 }
 
 @keyframes gradient {
@@ -95,5 +82,52 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-home {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px;
+  }
+
+  .form-container {
+    height: 180px;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 12px;
+  }
+
+  .card-front {
+    font-size: 16px;
+  }
+
+  .card-back {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-home {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    height: 160px;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 8px;
+  }
+
+  .card-front {
+    font-size: 14px;
+  }
+
+  .card-back {
+    font-size: 11px;
   }
 }

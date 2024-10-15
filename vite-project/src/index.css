@@ -61,14 +61,6 @@ body {
   overflow-x: hidden;
 }
 
-main {
-  width: 100vw;
-  max-width: 1200px; /* Limita el ancho del contenido principal */
-  margin: 20px auto; /* Centra el contenido principal horizontalmente */
-  padding: 0 20px; /* Asegura que haya espacio a los lados */
-  box-sizing: border-box;
-}
-
 /**
  * Render the `main` element consistently in IE.
  */

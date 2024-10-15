@@ -16,7 +16,7 @@ import './styles/App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />

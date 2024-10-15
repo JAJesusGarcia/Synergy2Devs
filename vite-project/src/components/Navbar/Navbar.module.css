@@ -1,21 +1,23 @@
 .navbar {
   background: #373434;
-  width: 100vw;
-  height: 60px;
+  width: 100%; /* Cambiado de 100vw a 100% */
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
+  margin: 0 auto;
 }
 
 .navbar-container {
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 60px;
-  width: 100%;
+  width: 100%; /* Cambiado de 100vw a 100% */
+  height: auto;
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 24px;
@@ -81,12 +83,24 @@
 }
 
 .menu-icon {
-  display: none;
+  display: none; /* Oculto en pantallas grandes */
   color: #fff;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {
+  .menu-icon {
+    display: block; /* Visible en pantallas pequeñas */
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+}
+
+/* @media screen and (max-width: 960px) {
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -146,6 +160,45 @@
   .navbar-container {
     padding: 0 60px;
   }
+} */
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 60px;
+    left: -100%; /* Oculto inicialmente */
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: #333;
+    z-index: 2;
+  }
+
+  /* Activa el menú cuando se hace clic */
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-item {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-links {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .nav-links:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 /* Estilos para los botones de autenticación */
@@ -168,5 +221,52 @@
   .nav-item.auth-buttons {
     margin-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 12px; /* Reducido el padding para pantallas pequeñas */
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: #333;
+    z-index: 2;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-item {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%; /* Asegura que los items ocupen todo el ancho */
+  }
+
+  .nav-links {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .navbar-logo {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
+
+  .menu-icon {
+    right: 12px; /* Ajusta la posición del icono del menú */
   }
 }
